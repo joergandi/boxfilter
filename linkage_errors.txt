@@ -1,0 +1,21 @@
+nvlink warning : SM Arch ('sm_32') not found in '/home/joerg/NVPACK/cuda-7.0/targets/armv7-linux-androideabi/lib/libcufft_static.a:memory_helpers.o'
+nvlink warning : SM Arch ('sm_32') not found in '/home/joerg/NVPACK/cuda-7.0/targets/armv7-linux-androideabi/lib/libcufft_static.a:planner_size_one.o'
+.. + 97 more 
+
+
+
+
+
+~/NVPACK/CUDA_Samples/7.0/boxFilter/jni$ ndk-build 
+[armeabi-v7a] SharedLibrary  : libboxfilter.so
+/home/joerg/NVPACK/cuda-7.0/targets/armv7-linux-androideabi/lib/libcufft_static.a(backend.o):backend.cpp:function Backend::Legacy::Legacy(unsigned int&, unsigned int*, unsigned int, fftStaticParameters, fftDevice**, int): error: undefined reference to 'std::__node_alloc::_M_deallocate(void*, unsigned int)'
+/home/joerg/NVPACK/cuda-7.0/targets/armv7-linux-androideabi/lib/libcufft_static.a(backend.o):backend.cpp:function Backend::Legacy::Legacy(unsigned int&, unsigned int*, unsigned int, fftStaticParameters, fftDevice**, int): error: undefined reference to 'std::__node_alloc::_M_deallocate(void*, unsigned int)'
+/home/joerg/NVPACK/cuda-7.0/targets/armv7-linux-androideabi/lib/libcufft_static.a(core.o):core.cpp:function Operation::Queue::Queue(std::list<Operation::Functor*, std::allocator<Operation::Functor*> > const&, Predicates::Predicate&): error: undefined reference to 'std::__node_alloc::_M_allocate(unsigned int&)'
+/home/joerg/NVPACK/cuda-7.0/targets/armv7-linux-androideabi/lib/libcufft_static.a(core.o):core.cpp:function Operation::Queue::Queue(std::list<Operation::Functor*, std::allocator<Operation::Functor*> > const&, Predicates::Predicate&): error: undefined reference to 'std::__node_alloc::_M_deallocate(void*, unsigned int)'
+/home/joerg/NVPACK/cuda-7.0/targets/armv7-linux-androideabi/lib/libcufft_static.a(core.o):core.cpp:function Operation::Queue::Queue(std::list<Operation::Functor*, std::allocator<Operation::Functor*> > const&, Predicates::Predicate&): error: undefined reference to 'std::__node_alloc::_M_deallocate(void*, unsigned int)'
+/home/joerg/NVPACK/cuda-7.0/targets/armv7-linux-androideabi/lib/libcufft_static.a(builder.o):builder.cpp:function Build::LegacyPlan::operator()(Config::Legacy&, Operation::MultiQueue&): error: undefined reference to 'std::__node_alloc::_M_allocate(unsigned int&)'
+/home/joerg/NVPACK/cuda-7.0/targets/armv7-linux-androideabi/lib/libcufft_static.a(builder.o):builder.cpp:function Build::LegacyPlan::operator()(Config::Legacy&, Operation::MultiQueue&): error: undefined reference to 'std::__node_alloc::_M_allocate(unsigned int&)'
+/home/joerg/NVPACK/cuda-7.0/targets/armv7-linux-androideabi/lib/libcufft_static.a(builder.o):builder.cpp:function Build::LegacyPlan::operator()(Config::Legacy&, Operation::MultiQueue&): error: undefined reference to 'std::__node_alloc::_M_allocate(unsigned int&)'
+collect2: error: ld returned 1 exit status
+
+
