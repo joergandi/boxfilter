@@ -22,6 +22,9 @@
 #include <cufft.h>
 #endif
 
+#include <android/log.h>
+
+
 #define checkCudaErrors(err)           __checkCudaErrors (err, __FILE__, __LINE__)
 
 inline void __checkCudaErrors(cudaError err, const char *file, const int line)
@@ -33,6 +36,56 @@ inline void __checkCudaErrors(cudaError err, const char *file, const int line)
         exit(EXIT_FAILURE);
     }
 }
+
+
+#define checkCufftErrors(err)           __checkCufftErrors (err, __FILE__, __LINE__)
+inline void __checkCufftErrors(cufftResult err, const char *file, const int line)
+{
+    if( CUFFT_SUCCESS != err) {
+    fprintf(stderr, "%s(%i) : CUFFT Runtime API error %d.\n", file, line, (int)err); 
+    exit(EXIT_FAILURE);
+	}
+}
+
+
+static const char *cudaGetErrorEnum(cufftResult error)
+{
+    switch (error)
+    {
+        case CUFFT_SUCCESS:
+            return "CUFFT_SUCCESS";
+
+        case CUFFT_INVALID_PLAN:
+            return "CUFFT_INVALID_PLAN";
+
+        case CUFFT_ALLOC_FAILED:
+            return "CUFFT_ALLOC_FAILED";
+
+        case CUFFT_INVALID_TYPE:
+            return "CUFFT_INVALID_TYPE";
+
+        case CUFFT_INVALID_VALUE:
+            return "CUFFT_INVALID_VALUE";
+
+        case CUFFT_INTERNAL_ERROR:
+            return "CUFFT_INTERNAL_ERROR";
+
+        case CUFFT_EXEC_FAILED:
+            return "CUFFT_EXEC_FAILED";
+
+        case CUFFT_SETUP_FAILED:
+            return "CUFFT_SETUP_FAILED";
+
+        case CUFFT_INVALID_SIZE:
+            return "CUFFT_INVALID_SIZE";
+
+        case CUFFT_UNALIGNED_DATA:
+            return "CUFFT_UNALIGNED_DATA";
+    }
+
+    return "<unknown>";
+}
+
 
 // texture memory is used to store the image data
 texture<uchar4, 2, cudaReadModeNormalizedFloat> rgbaTex;
@@ -166,15 +219,36 @@ namespace gpu_bf
     {
 
 #ifdef CUFFT_TEST
+	__android_log_print(ANDROID_LOG_INFO, "boxfilter", "Entering CUFFT block");
+	 fprintf(stderr, "Entering CUFFT block");
 	 //some dummy code with cufft dependency
-	 int fftplan_dims[2] = { 10, 10 }; 	
-         cufftHandle _fft_plan;
-         cufftComplex* data;
-	 cudaMalloc ((void **) &data,100*sizeof(cufftComplex));
-         cufftPlanMany(&_fft_plan,	2, fftplan_dims, 0, 1, 0, 0, 1, 0, CUFFT_C2C, 1);
-         cufftExecC2C(_fft_plan, data,data, CUFFT_FORWARD); 
-         cufftExecC2C(_fft_plan, data,data, CUFFT_INVERSE); 
-	 cudaFree(data);
+	int signal_size = 16;
+	 cufftComplex* data = NULL;
+	 checkCudaErrors(cudaMalloc ((void **) &data,signal_size*sizeof(cufftComplex)));
+	cufftHandle plan;
+    	cufftResult_t r = CUFFT_SUCCESS;
+	r = cufftPlan1d(&plan, signal_size, CUFFT_C2C, 1);
+	if (r != CUFFT_SUCCESS) {
+		__android_log_print(ANDROID_LOG_INFO, "boxfilter", "FAILED CUFFT plan (%d) %s",r,cudaGetErrorEnum(r));
+		exit(EXIT_FAILURE);
+	}
+	__android_log_print(ANDROID_LOG_INFO, "boxfilter", "Created CUFFT plan");
+	
+    	r=cufftExecC2C(plan, data, data, CUFFT_FORWARD);
+	if (r!= CUFFT_SUCCESS) {
+		__android_log_print(ANDROID_LOG_INFO, "boxfilter", "FAILED CUFFT fwd (%d) %s",r,cudaGetErrorEnum(r));
+		exit(EXIT_FAILURE);
+	}
+	__android_log_print(ANDROID_LOG_INFO, "boxfilter", "Executed CUFFT fwd");
+	
+	r = cufftDestroy(plan);
+	if (r!= CUFFT_SUCCESS) {
+		__android_log_print(ANDROID_LOG_INFO, "boxfilter", "FAILED CUFFT plan cleanup (%d) %s",r,cudaGetErrorEnum(r));
+		exit(EXIT_FAILURE);
+	}
+	 checkCudaErrors(cudaFree(data));
+	 fprintf(stderr, "Leaving CUFFT block");
+	__android_log_print(ANDROID_LOG_INFO, "boxfilter", "Leaving CUFFT block");
 #endif
         // bind texture to the array containing input image data
         checkCudaErrors(cudaBindTextureToArray(rgbaTex, d_array));

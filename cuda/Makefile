@@ -1,9 +1,13 @@
 HOST_COMPILER ?= $(NDK_ROOT)/toolchains/arm-linux-androideabi-4.6/gen_standalone/linux-x86_64/bin/arm-linux-androideabi-g++
 
 NVCC := $(CUDA_TOOLKIT_ROOT)/bin/nvcc -ccbin $(HOST_COMPILER) -m32 -arch=sm_53
-# nvlinker warning: sm_32, sm_30 archs not found in cufft_static... only sm_53?
+# cufft_static has not all arch profiles? only sm_53 complete?? not even sm_20 compiles w/o warnings
 
 CUDALIBS := -L$(CUDA_TOOLKIT_ROOT)/targets/armv7-linux-androideabi/lib -lcudart_static -lcufft_static -lcudadevrt -lculibos
+
+#CUDALIBS += -L$(NDK_ROOT)/sources/cxx-stl/gnu-libstdc++/4.6/libs/armeabi-v7a/ -lgnustl_static
+#CUDALIBS += -L$(NDK_ROOT)/sources/cxx-stl/gnu-libstdc++/4.6/libs/armeabi-v7a/ -lsupc++
+CUDALIBS += -L$(NDK_ROOT)/sources/cxx-stl/stlport/libs/armeabi-v7a/ -lstlport_static
 
 ################################################################################
 # Target rules
@@ -12,12 +16,12 @@ all: build
 build: lib_boxFilter.a
 
 boxFilter_kernel.o: boxFilter_kernel.cu
-	$(NVCC) $(EXTRA_CFLAGS) -o "$@" -dc "$<" 
+	$(NVCC) $(EXTRA_CFLAGS) -std=c++11 -o "$@" -dc "$<" 
  #need device compilation, otherwise cufft linkage fails?
 #	$(NVCC) $(EXTRA_CFLAGS) -o "$@" -c "$<"
 
 lib_boxFilter.o: boxFilter_kernel.o
-	$(NVCC) -dlink -o "$@" "$<" $(CUDALIBS)	
+	$(NVCC) -std=c++11 -dlink -o "$@" "$<" $(CUDALIBS)	
 #need device link, otherwise cufft linkage fails?
 #	$(NVCC) -lib -o "$@" "$<" 
 
