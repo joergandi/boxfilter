@@ -1,4 +1,5 @@
-obj/local/armeabi-v7a/objs-debug/boxfilter/NativeApp.o: jni/NativeApp.cpp \
+/home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/obj/local/armeabi-v7a/objs-debug/boxfilter/NativeApp.o: \
+ /home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/jni/NativeApp.cpp \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_and_util/../nv_shader/nv_shader.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/GLES2/gl2.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/GLES2/gl2platform.h \
@@ -33,7 +34,7 @@ obj/local/armeabi-v7a/objs-debug/boxfilter/NativeApp.o: jni/NativeApp.cpp \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/memory.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/android/asset_manager.h \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_and_util/../nv_file/nv_file.h \
- jni/NativeApp.h \
+ /home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/jni/NativeApp.h \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_and_util/../nv_egl_util/nv_egl_util.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/time.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/sys/time.h \
@@ -73,7 +74,8 @@ obj/local/armeabi-v7a/objs-debug/boxfilter/NativeApp.o: jni/NativeApp.cpp \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/android/native_activity.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/android/input.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/android/keycodes.h \
- jni/../cuda/boxFilter_kernel.h jni/Utils.h
+ /home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/jni/../cuda/boxFilter_kernel.h \
+ /home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/jni/Utils.h
 
 /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_and_util/../nv_shader/nv_shader.h:
 
@@ -143,7 +145,7 @@ obj/local/armeabi-v7a/objs-debug/boxfilter/NativeApp.o: jni/NativeApp.cpp \
 
 /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_and_util/../nv_file/nv_file.h:
 
-jni/NativeApp.h:
+/home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/jni/NativeApp.h:
 
 /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_and_util/../nv_egl_util/nv_egl_util.h:
 
@@ -223,6 +225,6 @@ jni/NativeApp.h:
 
 /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/android/keycodes.h:
 
-jni/../cuda/boxFilter_kernel.h:
+/home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/jni/../cuda/boxFilter_kernel.h:
 
-jni/Utils.h:
+/home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/jni/Utils.h:

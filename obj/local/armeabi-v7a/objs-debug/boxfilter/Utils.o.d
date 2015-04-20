@@ -1,4 +1,5 @@
-obj/local/armeabi-v7a/objs-debug/boxfilter/Utils.o: jni/Utils.cpp \
+/home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/obj/local/armeabi-v7a/objs-debug/boxfilter/Utils.o: \
+ /home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/jni/Utils.cpp \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_and_util/../nv_file/nv_file.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/stdio.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/sys/cdefs.h \
@@ -20,7 +21,7 @@ obj/local/armeabi-v7a/objs-debug/boxfilter/Utils.o: jni/Utils.cpp \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/asm-generic/posix_types.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/android/asset_manager.h \
- jni/NativeApp.h \
+ /home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/jni/NativeApp.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/android/log.h \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_and_util/../nv_egl_util/nv_egl_util.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/stdlib.h \
@@ -72,7 +73,7 @@ obj/local/armeabi-v7a/objs-debug/boxfilter/Utils.o: jni/Utils.cpp \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/android/keycodes.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/GLES2/gl2.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/GLES2/gl2platform.h \
- jni/../cuda/boxFilter_kernel.h
+ /home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/jni/../cuda/boxFilter_kernel.h
 
 /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_and_util/../nv_file/nv_file.h:
 
@@ -116,7 +117,7 @@ obj/local/armeabi-v7a/objs-debug/boxfilter/Utils.o: jni/Utils.cpp \
 
 /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/android/asset_manager.h:
 
-jni/NativeApp.h:
+/home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/jni/NativeApp.h:
 
 /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/android/log.h:
 
@@ -220,4 +221,4 @@ jni/NativeApp.h:
 
 /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/GLES2/gl2platform.h:
 
-jni/../cuda/boxFilter_kernel.h:
+/home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/jni/../cuda/boxFilter_kernel.h:

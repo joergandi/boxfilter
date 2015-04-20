@@ -1,4 +1,4 @@
-obj/local/armeabi-v7a/objs-debug/nv_file/nv_apk_file.o: \
+/home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/obj/local/armeabi-v7a/objs-debug/nv_file/nv_apk_file.o: \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_file/nv_apk_file.c \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/math.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/sys/cdefs.h \

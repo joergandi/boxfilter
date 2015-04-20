@@ -1,4 +1,4 @@
-obj/local/armeabi-v7a/objs-debug/nv_and_util/nv_native_app_glue.o: \
+/home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/obj/local/armeabi-v7a/objs-debug/nv_and_util/nv_native_app_glue.o: \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_and_util/nv_native_app_glue.c \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/jni.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/sys/cdefs.h \

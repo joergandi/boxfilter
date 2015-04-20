@@ -1,4 +1,4 @@
-obj/local/armeabi-v7a/objs-debug/nv_egl_util/nv_egl_util.o: \
+/home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/obj/local/armeabi-v7a/objs-debug/nv_egl_util/nv_egl_util.o: \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_egl_util/nv_egl_util.cpp \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_egl_util/nv_egl_util.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/stdlib.h \

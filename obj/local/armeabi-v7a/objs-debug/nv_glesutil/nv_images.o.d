@@ -1,4 +1,4 @@
-obj/local/armeabi-v7a/objs-debug/nv_glesutil/nv_images.o: \
+/home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/obj/local/armeabi-v7a/objs-debug/nv_glesutil/nv_images.o: \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_glesutil/nv_images.cpp \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_glesutil/../nv_global.h \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_glesutil/../nv_types.h \

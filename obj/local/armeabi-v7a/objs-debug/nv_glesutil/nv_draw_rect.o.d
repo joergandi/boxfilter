@@ -1,4 +1,4 @@
-obj/local/armeabi-v7a/objs-debug/nv_glesutil/nv_draw_rect.o: \
+/home/joerg/NVPACK/CUDA_Samples/7.0/boxFilter/obj/local/armeabi-v7a/objs-debug/nv_glesutil/nv_draw_rect.o: \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_glesutil/nv_draw_rect.cpp \
  /home/joerg/NVPACK/android-ndk-r10d/../Samples/TDK_Samples/libs/jni/nv_glesutil/nv_draw_rect.h \
  /home/joerg/NVPACK/android-ndk-r10d/platforms/android-21/arch-arm/usr/include/GLES2/gl2.h \
